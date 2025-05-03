@@ -9,7 +9,7 @@ class ExpenseSerializer(serializers.ModelSerializer):
             'title',
             'amount',
             'date',
-            'cate    D DCD gory',
+            'category',
             'notes',
             'created_at',
             'updated_at',
