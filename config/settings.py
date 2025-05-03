@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 # config/settings.py
+import dj_database_url
 import os
 
 GEMINI_API_KEY = os.getenv('AIzaSyAgytT4k_WfMpzMxDzUTKHQZCwPwQ8D5XA')
@@ -85,8 +86,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-import dj_database_url
-import os
+
 
 DATABASES = {
     'default': dj_database_url.config(
