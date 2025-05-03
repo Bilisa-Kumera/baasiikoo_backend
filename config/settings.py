@@ -15,6 +15,8 @@ from pathlib import Path
 import dj_database_url
 import os
 
+from dotenv import load_dotenv
+
 GEMINI_API_KEY = os.getenv('AIzaSyAgytT4k_WfMpzMxDzUTKHQZCwPwQ8D5XA')
 
 
@@ -87,9 +89,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+load_dotenv()
+print("DATABASE_URL:", os.getenv('DATABASE_URL'))
 
 DATABASES = {
-        'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
 
 
